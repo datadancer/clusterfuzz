@@ -92,6 +92,6 @@ f6c1e6541fa2        a8b2f90789ec        "/bin/bash"         5 minutes ago       
    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
    cd /clusterfuzz
    . "$(python3.8 -m pipenv --venv)/bin/activate"
-   python butler.py run_bot python butler.py run_bot --name localbot0 bots/localbot0
+   python butler.py run_bot --name localbot0 bots/localbot0
    ```
    可启动一个bot。
