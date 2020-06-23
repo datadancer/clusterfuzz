@@ -6,7 +6,8 @@
 * 加载docker load -i clusterfuzz_master.tar，加载成功后会得到镜像22ed944b6490
 * 启动docker run -it --name clusterfuzz --network host 22ed944b6490 /bin/bash
 * 进入docker后，执行以下指令用于启动clusterfuzz
-   ```su - cf
+   ```
+   su - cf
    export GOROOT=/usr/local/go
    export GOPATH=/clusterfuzz
    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
