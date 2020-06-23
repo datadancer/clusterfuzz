@@ -76,3 +76,22 @@ Running: python butler.py run setup --non-dry-run --local --config-dir=configs/t
 
 * 设置好点击ADD得到文件上传成功，做一些使用的测试
 
+## 运行bot
+成功运行server后，server运行在容器中，执行`docker ps`得到server的容器，例如
+```
+docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+f6c1e6541fa2        a8b2f90789ec        "/bin/bash"         5 minutes ago       Up 5 minutes                            cf-server
+```
+执行`docker exec -it f6c1e6541fa2 /bin/bash`进入容器，要吧容器ID替换成你的容器ID。
+执行切换环境命令
+   ```
+   su - cf
+   export GOROOT=/usr/local/go
+   export GOPATH=/clusterfuzz
+   export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+   cd /clusterfuzz
+   . "$(python3.8 -m pipenv --venv)/bin/activate"
+   python butler.py run_bot python butler.py run_bot --name localbot0 bots/localbot0
+   ```
+   可启动一个bot。
