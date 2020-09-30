@@ -8,6 +8,7 @@
 * 进入docker后，执行以下指令用于启动clusterfuzz
    ```
    su - cf
+   /bin/bash
    export GOROOT=/usr/local/go
    export GOPATH=/clusterfuzz
    export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
